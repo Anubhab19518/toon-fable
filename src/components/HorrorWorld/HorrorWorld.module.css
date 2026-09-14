@@ -1,0 +1,204 @@
+.horrorSection {
+  background-color: var(--bg-midnight);
+  padding: 0 0 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 3rem;
+  margin-bottom: 3.5rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.headerLeft {
+  max-width: 680px;
+}
+
+.arrowsGroup {
+  display: flex;
+  gap: 1rem;
+}
+
+.arrowBtn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--bg-midnight-card);
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-bounce);
+  cursor: pointer;
+}
+
+.arrowBtn:hover {
+  background: var(--brand-red);
+  border-color: var(--brand-red);
+  transform: scale(1.1);
+}
+
+/* Carousel Track */
+.carouselTrack {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  padding-bottom: 2rem;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.carouselTrack::-webkit-scrollbar {
+  display: none;
+}
+
+.horrorCard {
+  min-width: 360px;
+  max-width: 360px;
+  background: var(--bg-midnight-card);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  scroll-snap-align: start;
+  transition: var(--transition-bounce);
+  box-shadow: var(--shadow-dark-card);
+}
+
+.horrorCard:hover {
+  transform: translateY(-8px);
+  border-color: var(--brand-red);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 25px rgba(194, 59, 56, 0.3);
+}
+
+.cardImageContainer {
+  position: relative;
+  width: 100%;
+  height: 230px;
+  overflow: hidden;
+}
+
+.horrorImg {
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.horrorCard:hover .horrorImg {
+  transform: scale(1.08);
+}
+
+.horrorGradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(21, 37, 56, 0.95) 100%);
+  z-index: 1;
+}
+
+.horrorBadge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 2;
+  background: var(--brand-red);
+  color: #FFFFFF;
+  font-family: var(--font-display);
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-pill);
+}
+
+.hoverPlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  opacity: 0;
+  transition: var(--transition-smooth);
+}
+
+.horrorCard:hover .hoverPlay {
+  opacity: 1;
+}
+
+.playBtnWrap {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--brand-gold);
+  color: #1F2421;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(249, 184, 40, 0.8);
+}
+
+.playIconFill {
+  fill: #1F2421;
+  margin-left: 2px;
+}
+
+.horrorContent {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.locationText {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--brand-gold);
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.04em;
+}
+
+.taleTitle {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 1.25;
+  margin-bottom: 0.65rem;
+}
+
+.taleExcerpt {
+  font-size: 0.92rem;
+  color: var(--text-light-muted);
+  line-height: 1.55;
+  margin-bottom: 1.5rem;
+}
+
+.watchTaleBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: var(--brand-gold);
+  transition: color 0.3s ease;
+}
+
+.watchTaleBtn:hover {
+  color: #FFFFFF;
+}
+
+@media (max-width: 768px) {
+  .horrorCard {
+    min-width: 300px;
+    max-width: 300px;
+  }
+}

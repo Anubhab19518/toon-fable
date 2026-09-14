@@ -1,0 +1,166 @@
+.discoverSection {
+  padding: 5.5rem 0 6.5rem 0;
+  background-color: #FAF5EB;
+  position: relative;
+}
+
+.headerArea {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.sectionHeadline {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  color: #1B7A42;
+  letter-spacing: -0.03em;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.25rem;
+}
+
+.storyCard {
+  background: #1B7A42;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition-bounce);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.storyCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+}
+
+.cardImageWrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 80%;
+  background: #0D1B2A;
+  overflow: hidden;
+}
+
+.cardImg {
+  object-fit: cover;
+}
+
+.topBadge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #E50914;
+  color: #FFFFFF;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  z-index: 3;
+}
+
+/* Play Hover Overlay */
+.playOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.storyCard:hover .playOverlay {
+  opacity: 1;
+}
+
+.playIconBubble {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: #1B7A42;
+  border: 3px solid #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 4px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  transform: scale(0.9);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.storyCard:hover .playIconBubble {
+  transform: scale(1.08);
+}
+
+/* Bottom Solid Green Box */
+.cardGreenBottom {
+  background: #1B7A42;
+  padding: 1.75rem 1.5rem 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.cardHeadline {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.35;
+  margin-bottom: 1.5rem;
+  min-height: 54px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.whitePillBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFFFFF;
+  color: #1B7A42;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 900;
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  transition: var(--transition-bounce);
+  border: none;
+}
+
+.storyCard:hover .whitePillBtn {
+  background: #F9B828;
+  color: #1F2421;
+  transform: scale(1.05);
+}
+
+@media (max-width: 1024px) {
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,363 @@
+.universeSection {
+  position: relative;
+  padding: 6rem 0;
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  overflow: hidden;
+}
+
+.headerArea {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 3.5rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Bento Grid System */
+.bentoGrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+}
+
+.bentoCard {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background-color: var(--bg-tertiary);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2rem;
+  min-height: 340px;
+  cursor: pointer;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.45s ease, box-shadow 0.45s ease;
+}
+
+.bentoCard:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-amber);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), var(--glow-lantern);
+}
+
+.cardImageBg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.8s ease;
+  z-index: 1;
+}
+
+.bentoCard:hover .cardImageBg {
+  transform: scale(1.06);
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(11, 10, 9, 0.4) 0%, rgba(11, 10, 9, 0.8) 55%, rgba(11, 10, 9, 0.96) 100%);
+  z-index: 2;
+}
+
+.cardTop {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.categoryBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(11, 10, 9, 0.75);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-medium);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--surface-parchment);
+}
+
+.worldIcon {
+  color: var(--accent-amber-bright);
+}
+
+.elementBadge {
+  font-size: 0.75rem;
+  color: var(--accent-amber);
+  font-weight: 600;
+  background: rgba(201, 139, 74, 0.12);
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(201, 139, 74, 0.25);
+}
+
+.cardBottom {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+}
+
+.taglineBn {
+  font-family: var(--font-bengali-serif);
+  font-size: 0.92rem;
+  color: var(--accent-amber-bright);
+  margin-bottom: 0.35rem;
+}
+
+.cardTitle {
+  font-family: var(--font-serif);
+  font-size: 1.65rem;
+  color: var(--surface-parchment);
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+}
+
+.cardDesc {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.exploreText {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--surface-parchment-dim);
+  transition: color 0.3s ease;
+}
+
+.bentoCard:hover .exploreText {
+  color: var(--accent-amber-bright);
+}
+
+.arrowCircle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(232, 220, 197, 0.08);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--surface-parchment);
+  transition: var(--transition-smooth);
+}
+
+.bentoCard:hover .arrowCircle {
+  background: var(--accent-amber);
+  color: var(--text-inverse);
+  transform: rotate(45deg);
+}
+
+/* Specific Bento Tile Sizes */
+.cardHorror {
+  grid-column: span 7;
+  min-height: 420px;
+}
+
+.cardMystery {
+  grid-column: span 5;
+  min-height: 420px;
+}
+
+.cardFantasy {
+  grid-column: span 4;
+  min-height: 380px;
+}
+
+.cardMoral {
+  grid-column: span 4;
+  min-height: 380px;
+}
+
+.cardParanormal {
+  grid-column: span 4;
+  min-height: 380px;
+}
+
+.cardAdventure {
+  grid-column: span 12;
+  min-height: 280px;
+}
+
+/* Modal Lore Backdrop */
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(14px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.modalCard {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-amber);
+  border-radius: var(--radius-lg);
+  max-width: 600px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.9), var(--glow-lantern);
+}
+
+.closeBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(11, 10, 9, 0.8);
+  border: 1px solid var(--border-subtle);
+  color: var(--surface-parchment);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
+}
+
+.closeBtn:hover {
+  background: var(--accent-crimson);
+  color: #fff;
+}
+
+.modalBanner {
+  position: relative;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+}
+
+.modalBannerOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(23, 20, 18, 0.95) 100%);
+}
+
+.modalCategory {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--accent-amber-bright);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.modalBody {
+  padding: 1.75rem;
+}
+
+.modalTitle {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  color: var(--surface-parchment);
+  margin-bottom: 0.4rem;
+}
+
+.modalTagline {
+  color: var(--accent-amber);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.modalText {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.modalStoriesList {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.listTitle {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--surface-parchment);
+  margin-bottom: 0.75rem;
+}
+
+.storyPills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.storyPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(201, 139, 74, 0.1);
+  border: 1px solid var(--border-amber);
+  color: var(--surface-parchment);
+  font-size: 0.85rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-pill);
+}
+
+.pillSparkle {
+  color: var(--accent-amber);
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 1024px) {
+  .cardHorror { grid-column: span 12; }
+  .cardMystery { grid-column: span 12; }
+  .cardFantasy { grid-column: span 6; }
+  .cardMoral { grid-column: span 6; }
+  .cardParanormal { grid-column: span 12; }
+}
+
+@media (max-width: 640px) {
+  .cardFantasy { grid-column: span 12; }
+  .cardMoral { grid-column: span 12; }
+  .bentoCard { padding: 1.5rem; min-height: 300px; }
+}

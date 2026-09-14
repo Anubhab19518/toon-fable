@@ -1,0 +1,546 @@
+.journeySection {
+  padding: 6.5rem 0 7.5rem 0;
+  background-color: var(--bg-cream-darker);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Master 3-Column Bento Grid */
+.bentoMasterGrid {
+  display: grid;
+  grid-template-columns: 290px 1.6fr 290px;
+  gap: 1.5rem;
+  max-width: 1240px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+/* ================= LEFT COLUMN ================= */
+.bentoColLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  height: 100%;
+}
+
+/* Card 1: Left Top Feature Card with Soft Light Gradient */
+.cardLeftTop {
+  background: linear-gradient(165deg, #FFFFFF 0%, #FAF6EE 100%);
+  border-radius: 28px;
+  padding: 2.25rem 1.75rem;
+  border: 2px solid rgba(0, 0, 0, 0.04);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1.2;
+}
+
+.leftHeadline {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: #1F2421;
+  line-height: 1.25;
+  margin-bottom: 1.5rem;
+}
+
+.trialInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.trialBold {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: #1B7A42;
+}
+
+.trialSub {
+  font-size: 0.82rem;
+  color: #64748B;
+}
+
+/* Card 2: Left Middle 500K Audience Stats Card with Soft Light Gradient */
+.cardStatsLeft {
+  background: linear-gradient(165deg, #FFFFFF 0%, #FAF6EE 100%);
+  border-radius: 28px;
+  padding: 1.75rem;
+  border: 2px solid rgba(0, 0, 0, 0.04);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.35rem;
+  flex: 1;
+}
+
+.statNumber {
+  font-family: var(--font-display);
+  font-size: 2.3rem;
+  font-weight: 900;
+  color: #F27D28;
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.88rem;
+  color: #64748B;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.avatarStack {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatarCircle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2.5px solid #FFFFFF;
+  overflow: hidden;
+  margin-left: -8px;
+  position: relative;
+  background: #E2E8F0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.avatarCircle:first-child {
+  margin-left: 0;
+}
+
+.avatarImg {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.avatarIconCircle {
+  background: #FFF7ED;
+}
+
+/* Card 3: Left Bottom Action Button with Soft Light Gradient */
+.cardActionLeft {
+  background: linear-gradient(165deg, #FFFFFF 0%, #FAF6EE 100%);
+  border-radius: 28px;
+  padding: 1.15rem;
+  border: 2px solid rgba(0, 0, 0, 0.04);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glowPillBtn {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #1B7A42 0%, #2D9F5D 100%);
+  color: #FFFFFF;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 900;
+  padding: 0.95rem 1.5rem;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 6px 18px rgba(27, 122, 66, 0.35);
+  transition: var(--transition-bounce);
+  text-decoration: none;
+}
+
+.glowPillBtn:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 24px rgba(27, 122, 66, 0.45);
+}
+
+/* ================= CENTER COLUMN ================= */
+.bentoColCenter {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: relative;
+}
+
+/* Top Centerpiece Card */
+.centerTopCard {
+  background: linear-gradient(180deg, #134527 0%, #0D2E1A 100%);
+  border-radius: 32px;
+  padding: 2.75rem 2rem 5.5rem 2rem;
+  border: 3px solid #FFFFFF;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: visible;
+  flex: 1.2;
+}
+
+.centerHeadline {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.4vw, 2.7rem);
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.25rem;
+}
+
+.orbCodeRing {
+  font-family: monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.18em;
+  color: rgba(249, 184, 40, 0.65);
+  user-select: none;
+}
+
+/* Overlapping Center Orb Wrapper */
+.centerOrbWrapper {
+  position: absolute;
+  bottom: -68px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+}
+
+.logoCircleContainer {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #FFFDF7 0%, #FAF5EB 70%, #F5ECDC 100%);
+  border: 4px solid #FFFFFF;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2), 0 0 25px rgba(249, 184, 40, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+
+.cleanCrispLogo {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.12));
+}
+
+/* Bottom Row with 2 Split Cards with Light Gradient Background */
+.centerBottomRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  flex: 1.6;
+  position: relative;
+  z-index: 10;
+}
+
+.bottomCardLeft,
+.bottomCardRight {
+  background: linear-gradient(165deg, #FFFFFF 0%, #FAF5EB 100%);
+  border-radius: 28px;
+  padding: 2.25rem 1.75rem 2rem 1.75rem;
+  border: 2px solid rgba(0, 0, 0, 0.04);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.stageGroupHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  border-bottom: 1.5px solid rgba(0, 0, 0, 0.05);
+  padding-bottom: 0.85rem;
+}
+
+.groupBadge {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 900;
+  color: #1B7A42;
+  letter-spacing: 0.08em;
+}
+
+.groupTitle {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #1F2421;
+}
+
+.stagesList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+/* Clean, Spacious Stage Item Rows (Headings Only) */
+.stageItemPill {
+  display: flex;
+  align-items: center;
+  gap: 0.95rem;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  padding: 0.75rem 1rem;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  transition: var(--transition-smooth);
+}
+
+.stageItemPill:hover {
+  background: #FFFFFF;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  transform: translateX(4px);
+}
+
+.stageMiniIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.stageHeadingText {
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: #1F2421;
+  letter-spacing: -0.01em;
+}
+
+/* ================= RIGHT COLUMN ================= */
+.bentoColRight {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  height: 100%;
+}
+
+/* Card 1: Right Top Toggle Switch with Light Gradient */
+.cardToggleRight {
+  background: linear-gradient(165deg, #FFFFFF 0%, #FAF6EE 100%);
+  border-radius: 28px;
+  padding: 1.25rem;
+  border: 2px solid rgba(0, 0, 0, 0.04);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex: 0.7;
+}
+
+.toggleTrack {
+  width: 76px;
+  height: 42px;
+  background: #F1F5F9;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid rgba(0, 0, 0, 0.08);
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.toggleThumb {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.toggleOn {
+  transform: translateX(34px);
+  background: #1B7A42;
+  box-shadow: 0 0 12px rgba(27, 122, 66, 0.5);
+}
+
+/* Card 2: Right Middle 25M+ Stat Card with Light Gradient */
+.cardStatsRight {
+  background: linear-gradient(165deg, #FFFFFF 0%, #FAF6EE 100%);
+  border-radius: 28px;
+  padding: 1.75rem;
+  border: 2px solid rgba(0, 0, 0, 0.04);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+}
+
+.statNumberRight {
+  font-family: var(--font-display);
+  font-size: 2.3rem;
+  font-weight: 900;
+  color: #1F2421;
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+
+.statLabelRight {
+  font-size: 0.88rem;
+  color: #64748B;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.bracketDecoration {
+  color: #1B7A42;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  font-weight: 900;
+}
+
+/* Card 3: Right Bottom Floating Capsules Card with Light Gradient */
+.cardCapsulesRight {
+  background: linear-gradient(165deg, #FFFFFF 0%, #FAF6EE 100%);
+  border-radius: 28px;
+  padding: 1.75rem 1.5rem;
+  border: 2px solid rgba(0, 0, 0, 0.04);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1.6;
+  position: relative;
+}
+
+.capsulesTitle {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #1F2421;
+  margin-bottom: 0.25rem;
+}
+
+.capsulesDesc {
+  font-size: 0.82rem;
+  color: #64748B;
+  line-height: 1.4;
+  margin-bottom: 1.15rem;
+}
+
+.diagonalPillsArea {
+  position: relative;
+  height: 125px;
+  width: 100%;
+}
+
+.floatingPill {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: var(--transition-bounce);
+}
+
+.floatingPill:hover {
+  transform: scale(1.08) !important;
+}
+
+.pill1 {
+  top: 5px;
+  left: 0;
+  transform: rotate(-10deg);
+  background: #EDE9FE;
+  color: #6D28D9;
+  border: 1px solid #DDD6FE;
+}
+
+.pill2 {
+  top: 50px;
+  left: 5px;
+  transform: rotate(-20deg);
+  background: #FCE7F3;
+  color: #DB2777;
+  border: 1px solid #FBCFE8;
+}
+
+.pill3 {
+  top: 5px;
+  right: 0;
+  transform: rotate(8deg);
+  background: #FFEDD5;
+  color: #C2410C;
+  border: 1px solid #FED7AA;
+}
+
+.pillCircle {
+  top: 55px;
+  right: 55px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F97316;
+  color: #FFF;
+  box-shadow: 0 4px 10px rgba(249, 115, 22, 0.35);
+}
+
+.pill4 {
+  bottom: 0;
+  right: 0;
+  transform: rotate(-8deg);
+  background: #E0F2FE;
+  color: #0369A1;
+  border: 1px solid #BAE6FD;
+}
+
+.pillDotOrange {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #F97316;
+}
+
+.pillDotCyan {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #0284C7;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1080px) {
+  .bentoMasterGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .centerOrbWrapper {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin: 1.5rem auto -2rem auto;
+  }
+}

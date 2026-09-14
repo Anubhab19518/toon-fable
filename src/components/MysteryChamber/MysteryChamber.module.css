@@ -1,0 +1,288 @@
+.mysterySection {
+  position: relative;
+  padding: 8rem 0;
+  background-color: #070706;
+  border-bottom: 1px solid var(--border-subtle);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chamberBg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1600&q=85');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.22) contrast(1.2);
+  z-index: 1;
+}
+
+.mistOverlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(11, 10, 9, 0.4) 0%, rgba(7, 7, 6, 0.95) 85%);
+  z-index: 2;
+}
+
+.mysteryContainer {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 900px;
+}
+
+.mysteryBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-amber-bright);
+  background: rgba(201, 139, 74, 0.15);
+  border: 1px solid var(--border-amber);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-pill);
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.keyIcon {
+  color: var(--accent-amber);
+}
+
+.mysteryHeading {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  line-height: 1.15;
+  color: var(--surface-parchment);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.line1 {
+  color: var(--surface-parchment-dim);
+}
+
+.line2 {
+  background: linear-gradient(135deg, var(--surface-parchment) 0%, var(--accent-amber) 60%, var(--accent-amber-bright) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-style: italic;
+}
+
+.mysterySubtitleBn {
+  font-family: var(--font-bengali-serif);
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  color: var(--accent-amber-bright);
+  max-width: 680px;
+  margin-bottom: 3rem;
+  font-weight: 400;
+}
+
+/* Chamber Portal Box */
+.chamberPortal {
+  width: 100%;
+  background: rgba(23, 20, 18, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-amber);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9), var(--glow-lantern-strong);
+  text-align: left;
+}
+
+.portalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 2rem;
+  background: rgba(11, 10, 9, 0.7);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.lockStatus {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--surface-parchment);
+}
+
+.lockedIcon {
+  color: var(--accent-amber);
+}
+
+.unlockedIcon {
+  color: #4BB543;
+}
+
+.unlockedText {
+  color: #4BB543;
+}
+
+.portalCode {
+  font-family: monospace;
+  font-size: 0.78rem;
+  color: var(--text-faint);
+  letter-spacing: 0.1em;
+}
+
+.portalBody {
+  padding: 2.25rem;
+}
+
+.riddleQuestion {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  color: var(--surface-parchment);
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  font-style: italic;
+  text-align: center;
+}
+
+.optionsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.optionBtn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.15rem 1.25rem;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  color: var(--surface-parchment);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: left;
+  transition: var(--transition-smooth);
+}
+
+.optionBtn:hover {
+  background: rgba(32, 27, 24, 0.95);
+  border-color: var(--border-amber);
+  transform: translateY(-2px);
+}
+
+.optionMarker {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(232, 220, 197, 0.08);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.lanternFlame {
+  color: var(--accent-amber);
+}
+
+.optionCorrect {
+  border-color: #4BB543 !important;
+  background: rgba(75, 181, 67, 0.12) !important;
+  box-shadow: 0 0 20px rgba(75, 181, 67, 0.3);
+}
+
+.optionCorrect .optionMarker {
+  background: #4BB543;
+  border-color: #4BB543;
+  color: #FFF;
+}
+
+.optionWrong {
+  border-color: var(--accent-crimson) !important;
+  background: rgba(125, 47, 50, 0.15) !important;
+}
+
+.optionWrong .optionMarker {
+  background: var(--accent-crimson);
+  border-color: var(--accent-crimson);
+  color: #FFF;
+}
+
+.hintMessage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #E57373;
+  font-size: 0.92rem;
+  margin-top: 1rem;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Unlocked Secret Story Scroll */
+.unlockedBox {
+  margin-top: 2rem;
+  background: linear-gradient(135deg, rgba(201, 139, 74, 0.15) 0%, rgba(125, 47, 50, 0.15) 100%);
+  border: 1px solid var(--accent-amber);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  animation: fadeIn 0.4s ease;
+}
+
+.unlockedBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--accent-amber);
+  color: var(--text-inverse);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-pill);
+  margin-bottom: 0.85rem;
+}
+
+.unlockedTitle {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--surface-parchment);
+  margin-bottom: 0.75rem;
+}
+
+.unlockedTeaser {
+  font-size: 1rem;
+  color: var(--surface-parchment-dim);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.unlockedAction {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .optionsGrid {
+    grid-template-columns: 1fr;
+  }
+  .portalBody {
+    padding: 1.5rem;
+  }
+}

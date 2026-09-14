@@ -1,0 +1,151 @@
+.culturalSection {
+  padding: 6.5rem 0;
+  background-color: var(--bg-cream-darker);
+  position: relative;
+}
+
+.culturalGrid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.culturalLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.leadText {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--brand-forest);
+  line-height: 1.6;
+  margin-bottom: 2.25rem;
+}
+
+.heritageCards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.heritageCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  background: #FFFFFF;
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  border: 2px solid rgba(0, 0, 0, 0.04);
+  transition: var(--transition-bounce);
+}
+
+.heritageCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--brand-gold);
+}
+
+.cardIconBox {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.03);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.heritageCardTitle {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: var(--text-dark);
+  margin-bottom: 0.35rem;
+}
+
+.heritageCardDesc {
+  font-size: 0.95rem;
+  color: var(--text-dark-muted);
+  line-height: 1.55;
+}
+
+/* Right Visual Collage */
+.culturalRight {
+  position: relative;
+}
+
+.artCollage {
+  position: relative;
+}
+
+.mainArtFrame {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-hover);
+  border: 4px solid #FFFFFF;
+}
+
+.mainArtImg {
+  object-fit: cover;
+}
+
+.artFrameOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(13, 27, 42, 0.75) 100%);
+}
+
+.floatingQuoteCard {
+  position: absolute;
+  bottom: -25px;
+  left: -20px;
+  right: 20px;
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  padding: 1.5rem 1.75rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  border: 2px solid var(--brand-red);
+}
+
+.quoteMark {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--brand-red);
+  line-height: 0.8;
+  display: block;
+}
+
+.floatingQuoteText {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.4;
+  margin-bottom: 0.4rem;
+}
+
+.quoteAuthor {
+  font-size: 0.8rem;
+  color: var(--brand-orange);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1024px) {
+  .culturalGrid {
+    grid-template-columns: 1fr;
+    gap: 3.5rem;
+  }
+  .floatingQuoteCard {
+    bottom: -15px;
+    left: 0;
+    right: 0;
+  }
+}
