@@ -10,6 +10,7 @@ import { CharacterRoster } from '@/components/Characters/CharacterRoster';
 import { WorldOfToonFable } from '@/components/WorldTiles/WorldOfToonFable';
 import { LatestEpisodes } from '@/components/Episodes/LatestEpisodes';
 import { BengaliStorytelling } from '@/components/CulturalRoot/BengaliStorytelling';
+import { BlogSection } from '@/components/Blog/BlogSection';
 import { JoinTheStory } from '@/components/Community/JoinTheStory';
 import { BrandStatement } from '@/components/BrandStatement/BrandStatement';
 import { Footer } from '@/components/Footer/Footer';
@@ -59,10 +60,13 @@ export default function Home() {
       {/* Section 09: Rooted in Bengali Storytelling (Cultural Celebration) */}
       <BengaliStorytelling />
 
-      {/* Section 10: Join the Story (Community, Social Hub & Audience Poll) */}
+      {/* Section 10: Fable Chronicles & Blog (Interactive Articles & Lore) */}
+      <BlogSection />
+
+      {/* Section 11: Join the Story (Community, Social Hub & Audience Poll) */}
       <JoinTheStory />
 
-      {/* Section 11: Brand Statement (Cinematic Franchise Quote) */}
+      {/* Section 12: Brand Statement (Cinematic Franchise Quote) */}
       <BrandStatement />
 
       {/* Franchise Footer */}

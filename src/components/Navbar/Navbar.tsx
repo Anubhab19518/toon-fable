@@ -39,7 +39,7 @@ export const Navbar: React.FC = () => {
         <Link href="#home" className={styles.logoLink}>
           <div className={styles.logoBadge}>
             <Image
-              src="/toon-fable.jpeg"
+              src="/toon-fable-Picsart-BackgroundRemover.jpeg"
               alt="Toon Fable Bangla"
               width={46}
               height={46}

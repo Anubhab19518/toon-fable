@@ -73,7 +73,7 @@ export const MysteryChamber: React.FC = () => {
           <div className={styles.portalBody}>
             {/* The Riddle Text */}
             <p className={styles.riddleQuestion}>
-              "{isBn ? MYSTERY_RIDDLE.questionBn : isEn ? MYSTERY_RIDDLE.question : MYSTERY_RIDDLE.questionBn}"
+              &ldquo;{isBn ? MYSTERY_RIDDLE.questionBn : isEn ? MYSTERY_RIDDLE.question : MYSTERY_RIDDLE.questionBn}&rdquo;
             </p>
 
             {/* Riddle Options Grid */}

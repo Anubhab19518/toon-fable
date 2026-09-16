@@ -89,7 +89,7 @@ export const MysterySection: React.FC = () => {
                   </h3>
 
                   <p className={styles.clueText}>
-                    "{isBn ? item.clueBn : item.clue}"
+                    &ldquo;{isBn ? item.clueBn : item.clue}&rdquo;
                   </p>
 
                   {/* Reveal Clue Action */}

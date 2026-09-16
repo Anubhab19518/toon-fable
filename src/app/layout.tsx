@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     siteName: 'Toon Fable Bangla',
     images: [
       {
-        url: '/toon-fable.jpeg',
+        url: '/toon-fable-Picsart-BackgroundRemover.jpeg',
         width: 1200,
         height: 630,
         alt: 'Toon Fable Bangla',
@@ -43,7 +43,16 @@ export const metadata: Metadata = {
     title: 'Toon Fable Bangla — Stories Beyond Imagination',
     description:
       'Immersive Bengali animated ghost stories and folklore mystery universe.',
-    images: ['/toon-fable.jpeg'],
+    images: ['/toon-fable-Picsart-BackgroundRemover.jpeg'],
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon.png', type: 'image/png' },
+      { url: '/toon-fable-Picsart-BackgroundRemover.jpeg', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: '/apple-icon.png',
   },
 };
 
@@ -55,7 +64,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/toon-fable.jpeg" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/apple-icon.png" />
       </head>
       <body>
         <LanguageProvider>

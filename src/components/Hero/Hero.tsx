@@ -77,6 +77,9 @@ export const Hero: React.FC = () => {
             <a href="#folklore" onClick={scrollTo('folklore')} className={styles.navLink}>
               <span>Folklore</span>
             </a>
+            <a href="#blog" onClick={scrollTo('blog')} className={styles.navLink}>
+              <span>Blog</span>
+            </a>
             <a href="#community" onClick={scrollTo('community')} className={styles.navLink}>
               <span>Community</span>
             </a>

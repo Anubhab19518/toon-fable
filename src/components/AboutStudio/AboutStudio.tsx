@@ -59,13 +59,13 @@ export const AboutStudio: React.FC = () => {
             </div>
 
             <h2 className="section-title">
-              Crafting Bengal's Animated Mythos
+              Crafting Bengal&apos;s Animated Mythos
             </h2>
 
             <p className={styles.manifestoQuote}>
-              "{isBn
+              &ldquo;{isBn
                 ? 'টুন ফেবল বাংলা শুধু আরেকটি ভূতের গল্প বলে না— এটি গড়ে তুলছে এমন এক অ্যানিমেশন ভুবন যেখানে প্রতিটি পর্ব উন্মোচন করে নতুন বিস্ময়।'
-                : 'Toon Fable Bangla isn\'t simply telling another ghost story. It is building a world of Bengali animated stories where every episode brings a new mystery.'}"
+                : 'Toon Fable Bangla isn\'t simply telling another ghost story. It is building a world of Bengali animated stories where every episode brings a new mystery.'}&rdquo;
             </p>
 
             <p className={styles.manifestoBody}>
@@ -97,7 +97,7 @@ export const AboutStudio: React.FC = () => {
             <div className={styles.brandHeroCard}>
               <div className={styles.brandCardImgWrapper}>
                 <Image
-                  src="/toon-fable.jpeg"
+                  src="/toon-fable-Picsart-BackgroundRemover.jpeg"
                   alt="Toon Fable Studio"
                   width={140}
                   height={140}

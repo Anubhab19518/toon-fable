@@ -190,8 +190,8 @@ export const CharacterShowcase: React.FC = () => {
 
               <div className={styles.loreQuoteBox}>
                 <Quote size={20} />
-                <p>"{modalCharacter.quote}"</p>
-                <p className={styles.loreQuoteBn}>"{modalCharacter.quoteBn}"</p>
+                <p>&ldquo;{modalCharacter.quote}&rdquo;</p>
+                <p className={styles.loreQuoteBn}>&ldquo;{modalCharacter.quoteBn}&rdquo;</p>
               </div>
             </div>
           </div>

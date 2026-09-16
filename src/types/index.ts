@@ -49,3 +49,29 @@ export interface StoryWorld {
   elementCount: string;
   stories: string[];
 }
+
+export interface BlogPost {
+  id: string;
+  slug: string;
+  title: string;
+  titleBn: string;
+  excerpt: string;
+  excerptBn: string;
+  content: string[];
+  contentBn: string[];
+  coverImage: string;
+  category: 'folklore' | 'animation' | 'culture' | 'behind-the-scenes';
+  categoryLabel: { en: string; bn: string };
+  author: string;
+  authorBn: string;
+  authorRole: string;
+  authorRoleBn: string;
+  readTime: string;
+  readTimeBn: string;
+  publishedDate: string;
+  publishedDateBn: string;
+  tags: string[];
+  tagsBn: string[];
+  quote?: { text: string; textBn: string; attribution: string; attributionBn: string };
+  keyTakeaways?: { en: string[]; bn: string[] };
+}

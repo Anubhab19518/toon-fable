@@ -105,11 +105,11 @@ export const Footer: React.FC = () => {
           <div className={styles.linksCol}>
             <h4 className={styles.colTitle}>{isBn ? 'গল্পের ভুবন' : 'Story Realms'}</h4>
             <ul className={styles.linksList}>
+              <li><a href="#blog">{isBn ? 'কাহিনী ও ব্লগ' : 'Fable Chronicles (Blog)'}</a></li>
               <li><a href="#genres">{isBn ? 'ভৌতিক ও ভূতের গল্প' : 'Horror & Ghost Stories'}</a></li>
               <li><a href="#genres">{isBn ? 'রহস্য ও রোমাঞ্চ' : 'Mystery & Suspense'}</a></li>
               <li><a href="#genres">{isBn ? 'ডার্ক ফ্যান্টাসি' : 'Dark Fantasy Epics'}</a></li>
               <li><a href="#genres">{isBn ? 'নীতিকথা ও রূপকথা' : 'Moral Fables'}</a></li>
-              <li><a href="#genres">{isBn ? 'অ্যানিমেশন অভিযান' : 'Cartoon Adventures'}</a></li>
             </ul>
           </div>
 
