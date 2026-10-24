@@ -115,13 +115,14 @@ export const Footer: React.FC = () => {
 
           {/* Quick Nav 2: Characters */}
           <div className={styles.linksCol}>
-            <h4 className={styles.colTitle}>{isBn ? 'চরিত্রসমূহ' : 'Characters'}</h4>
+            <h4 className={styles.colTitle}>Characters</h4>
             <ul className={styles.linksList}>
-              <li><a href="#characters">{isBn ? 'ব্রহ্মদৈত্য (পণ্ডিত আত্মা)' : 'Brahmodaittya Lore'}</a></li>
-              <li><a href="#characters">{isBn ? 'শাঁখচুন্নি ও পেত্নী' : 'Shankhachurni & Petni'}</a></li>
-              <li><a href="#characters">{isBn ? 'মেছো ভূত' : 'Mecho Bhoot'}</a></li>
-              <li><a href="#characters">{isBn ? 'রহস্য সন্ধানী অনির্বাণ' : 'Investigator Anirban'}</a></li>
-              <li><a href="#characters">{isBn ? 'গল্পকার বুড়ো দাদু' : 'Budo Dadu (Storyteller)'}</a></li>
+              <li><a href="#characters">Bolai Pagol</a></li>
+              <li><a href="#characters">Kali Tantrik</a></li>
+              <li><a href="#characters">Kanai Khuro</a></li>
+              <li><a href="#characters">Officer Gopal Chandra</a></li>
+              <li><a href="#characters">Sadu Baba</a></li>
+              <li><a href="#characters">Srilata</a></li>
             </ul>
           </div>
 

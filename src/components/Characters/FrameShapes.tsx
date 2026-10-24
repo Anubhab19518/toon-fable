@@ -5,10 +5,11 @@ import styles from './CharacterRoster.module.css';
 interface FrameProps {
   image: string;
   name: string;
+  objectPosition?: string;
 }
 
 // 1. Top-Left: Green Rounded Rectangular Frame with White Inner Border
-export const GreenRectFrame: React.FC<FrameProps> = ({ image, name }) => {
+export const GreenRectFrame: React.FC<FrameProps> = ({ image, name, objectPosition }) => {
   return (
     <div className={styles.greenFrameContainer}>
       <div className={styles.greenOuterBorder}>
@@ -19,6 +20,7 @@ export const GreenRectFrame: React.FC<FrameProps> = ({ image, name }) => {
               alt={name}
               fill
               className={styles.frameImg}
+              style={{ objectPosition: objectPosition || 'center' }}
               sizes="(max-width: 768px) 100vw, 33vw"
             />
           </div>
@@ -29,7 +31,7 @@ export const GreenRectFrame: React.FC<FrameProps> = ({ image, name }) => {
 };
 
 // 2. Top-Middle: Cyan Scalloped Postage Stamp Frame (Square)
-export const CyanStampFrame: React.FC<FrameProps> = ({ image, name }) => {
+export const CyanStampFrame: React.FC<FrameProps> = ({ image, name, objectPosition }) => {
   // SVG Scalloped Postage Stamp Path
   const stampPath = `
     M 24 24
@@ -60,6 +62,7 @@ export const CyanStampFrame: React.FC<FrameProps> = ({ image, name }) => {
             alt={name}
             fill
             className={styles.frameImg}
+            style={{ objectPosition: objectPosition || 'center' }}
             sizes="(max-width: 768px) 100vw, 33vw"
           />
         </div>
@@ -69,7 +72,7 @@ export const CyanStampFrame: React.FC<FrameProps> = ({ image, name }) => {
 };
 
 // 3. Top-Right: Hot Pink Smooth Oval Frame
-export const PinkOvalFrame: React.FC<FrameProps> = ({ image, name }) => {
+export const PinkOvalFrame: React.FC<FrameProps> = ({ image, name, objectPosition }) => {
   return (
     <div className={styles.pinkOvalContainer}>
       <div className={styles.pinkOvalBorder}>
@@ -79,6 +82,7 @@ export const PinkOvalFrame: React.FC<FrameProps> = ({ image, name }) => {
             alt={name}
             fill
             className={styles.frameImg}
+            style={{ objectPosition: objectPosition || 'center' }}
             sizes="(max-width: 768px) 100vw, 33vw"
           />
         </div>
@@ -88,7 +92,7 @@ export const PinkOvalFrame: React.FC<FrameProps> = ({ image, name }) => {
 };
 
 // 4. Bottom-Left: Blue Wide-Mat Gallery Frame
-export const BlueMatFrame: React.FC<FrameProps> = ({ image, name }) => {
+export const BlueMatFrame: React.FC<FrameProps> = ({ image, name, objectPosition }) => {
   return (
     <div className={styles.blueMatContainer}>
       <div className={styles.blueOuterBorder}>
@@ -99,6 +103,7 @@ export const BlueMatFrame: React.FC<FrameProps> = ({ image, name }) => {
               alt={name}
               fill
               className={styles.frameImg}
+              style={{ objectPosition: objectPosition || 'center' }}
               sizes="(max-width: 768px) 100vw, 33vw"
             />
           </div>
@@ -109,7 +114,7 @@ export const BlueMatFrame: React.FC<FrameProps> = ({ image, name }) => {
 };
 
 // 5. Bottom-Middle: Sunny Golden-Orange Rectangular Frame
-export const OrangeRectFrame: React.FC<FrameProps> = ({ image, name }) => {
+export const OrangeRectFrame: React.FC<FrameProps> = ({ image, name, objectPosition }) => {
   return (
     <div className={styles.orangeFrameContainer}>
       <div className={styles.orangeOuterBorder}>
@@ -120,6 +125,7 @@ export const OrangeRectFrame: React.FC<FrameProps> = ({ image, name }) => {
               alt={name}
               fill
               className={styles.frameImg}
+              style={{ objectPosition: objectPosition || 'center' }}
               sizes="(max-width: 768px) 100vw, 33vw"
             />
           </div>
@@ -130,7 +136,7 @@ export const OrangeRectFrame: React.FC<FrameProps> = ({ image, name }) => {
 };
 
 // 6. Bottom-Right: Purple Scalloped Petal Oval Frame with Dotted Mat
-export const PurplePetalOvalFrame: React.FC<FrameProps> = ({ image, name }) => {
+export const PurplePetalOvalFrame: React.FC<FrameProps> = ({ image, name, objectPosition }) => {
   // Generate smooth 26-petal scalloped ellipse path
   const petals = 24;
   const cx = 175;
@@ -188,6 +194,7 @@ export const PurplePetalOvalFrame: React.FC<FrameProps> = ({ image, name }) => {
             alt={name}
             fill
             className={styles.frameImg}
+            style={{ objectPosition: objectPosition || 'center' }}
             sizes="(max-width: 768px) 100vw, 33vw"
           />
         </div>

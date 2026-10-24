@@ -23,13 +23,11 @@ type FrameType =
 interface FrameCharacter {
   id: string;
   name: string;
-  nameBn: string;
   role: string;
-  roleBn: string;
   bio: string;
-  bioBn: string;
   frameType: FrameType;
   image: string;
+  objectPosition?: string;
 }
 
 export const CharacterRoster: React.FC = () => {
@@ -38,87 +36,75 @@ export const CharacterRoster: React.FC = () => {
 
   const frameCharacters: FrameCharacter[] = [
     {
-      id: 'anirban',
-      name: 'Anirban',
-      nameBn: 'অনির্বাণ',
-      role: 'Folklore Investigator',
-      roleBn: 'রহস্য সন্ধানী',
-      bio: 'Anirban, our fearless young detective, wanders deep into haunted villages and forgotten rajbaris with his trusty notebook and lantern, uncovering ancient Bengali mysteries.',
-      bioBn: 'সাহসী রহস্য সন্ধানী অনির্বাণ, তার লণ্ঠন আর নোটবুক নিয়ে ঘুরে বেড়ায় ভুতুড়ে গ্রাম ও প্রাচীন জমিদার বাড়িতে।',
+      id: 'bolai-pagol',
+      name: 'bolai pagol',
+      role: 'Village Wanderer & Eccentric Soul',
+      bio: 'Known throughout the village for his colorful patched clothes and mystic intuition, Bolai Pagol perceives unseen secrets and strange wanderings that ordinary eyes overlook.',
       frameType: 'green-rect',
-      image: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=85',
+      image: '/characters/bolai pagol.png',
+      objectPosition: '50% center',
     },
     {
-      id: 'brahmodaittya',
-      name: 'Brahmodaittya',
-      nameBn: 'ব্রহ্মদৈত্য',
-      role: 'Guardian Scholar Spirit',
-      roleBn: 'পণ্ডিত আত্মা ও রক্ষক',
-      bio: 'Brahmodaittya, the revered and scholarly spirit who resides atop sacred Bel trees, guards the village with ancient wisdom, white dhoti, and a solemn vow to protect honest travelers.',
-      bioBn: 'পবিত্র বেল গাছের চূড়ায় বাস করা বিজ্ঞ ও পণ্ডিত আত্মা। সাদা ধুতি পরা এই শ্রদ্ধেয় আত্মা সৎ মানুষদের রক্ষা করেন।',
+      id: 'kali-tantrik',
+      name: 'kali tantrik',
+      role: 'Master of Dark Arts & Occult Mysteries',
+      bio: 'Draped in sacred ash, rudraksha and skull beads, Kali Tantrik channels esoteric nocturnal rituals and ancient mystical chants from forgotten cremation grounds.',
       frameType: 'cyan-stamp',
-      image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=85',
+      image: '/characters/kali tantrik.png',
+      objectPosition: '41% center',
     },
     {
-      id: 'shankhachurni',
-      name: 'Shankhachurni',
-      nameBn: 'শাঁখচুন্নি',
-      role: 'Spirit of Conch & Coral',
-      roleBn: 'শাঁখার অলৌকিক আত্মা',
-      bio: 'Shankhachurni, wearing traditional conch shell bangles and crimson sarees, dwells among the misty village marshes, testing unsuspecting travelers with riddles.',
-      bioBn: 'হাতে শাঁখা ও পরনে লাল শাড়ি পরা গ্রামের জলাভূমির এক রহস্যময়ী আত্মা। লোকসংস্কৃতির মর্যাদা রক্ষা করা তার ধর্ম।',
+      id: 'kanai-khuro',
+      name: 'kanai khuro',
+      role: 'The Neighborhood Rickshaw Companion',
+      bio: 'Pedaling his iconic cycle-rickshaw along misty village byways, Kanai Khuro is always ready with warm folk humor, tea-stall tales, and a swift ride out of trouble.',
       frameType: 'pink-oval',
-      image: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=85',
+      image: '/characters/kanai khuro.png',
+      objectPosition: '48% center',
     },
     {
-      id: 'mecho-bhoot',
-      name: 'Mecho Bhoot',
-      nameBn: 'মেছো ভূত',
-      role: 'Mischievous Fish Spirit',
-      roleBn: 'মাছের অনুরাগী ভূত',
-      bio: 'Mecho Bhoot, the playful phantom who cannot resist fresh fried Hilsa and Rui fish, haunts the river banks with humorous bargains and comedic pranks.',
-      bioBn: 'ইলিশ ও রুই মাছের লোভ সামলাতে না পারা এক কৌতুকপূর্ণ ভূত। রাতের নদীতে জেলেদের মাছ নিয়ে মজার সব কাণ্ড ঘটায়।',
+      id: 'officer-gopal-chandra',
+      name: 'officer gopal chandra',
+      role: 'Investigating Officer & Skeptic Lawman',
+      bio: 'Stationed at the precinct with his crisp khaki uniform and observant demeanor, Officer Gopal Chandra relentlessly seeks logical answers behind every supernatural occurrence.',
       frameType: 'blue-mat',
-      image: 'https://images.unsplash.com/photo-1509114397022-ed747cca3f65?auto=format&fit=crop&w=800&q=85',
+      image: '/characters/officer gopal chandra.png',
+      objectPosition: '48% center',
     },
     {
-      id: 'budo-dadu',
-      name: 'Budo Dadu',
-      nameBn: 'বুড়ো দাদু',
-      role: 'Master Storyteller',
-      roleBn: 'গ্রামের কথাকার',
-      bio: 'Budo Dadu gathers children around the courtyard lamp every evening, bringing folklore, grandfather tales, and unexpected moral twists alive with laughter.',
-      bioBn: 'গ্রামের উঠোনে প্রদীপের আলোয় বসে ছোটদের রূপকথা ও নীতিকথার গল্প শোনান। তার গল্পের ঝুলি কখনো শেষ হয় না।',
+      id: 'sadu-baba',
+      name: 'sadu baba',
+      role: 'Revered Ascetic & Forest Sage',
+      bio: 'Adorned in saffron robes and rudraksha beads, Sadu Baba offers spiritual wisdom, ancient mantras, and peaceful sanctuary from otherworldly disturbances.',
       frameType: 'orange-rect',
-      image: 'https://images.unsplash.com/photo-1514539079130-25950c84af65?auto=format&fit=crop&w=800&q=85',
+      image: '/characters/sadu baba.png',
+      objectPosition: '49% center',
     },
     {
-      id: 'nishi-daak',
-      name: 'Nishi Daak',
-      nameBn: 'নিশি ডাক',
-      role: 'The Whispering Caller',
-      roleBn: 'নিশীথিনী কণ্ঠস্বর',
-      bio: 'Nishi Daak, the mysterious nighttime entity that whispers familiar voices in the deep dark, warning travelers never to answer until it calls three times.',
-      bioBn: 'গভীর রাতে চেনা মানুষের কণ্ঠে ডেকে চলা এক অলৌকিক মায়াবী শক্তি। তিনবারের আগে যার ডাকে সাড়া দিতে নেই।',
+      id: 'srilata',
+      name: 'srilata',
+      role: 'Guardian of Traditions & Home Lore',
+      bio: 'Epitomizing rural warmth and folklore storytelling in her classic saree, Srilata protects household traditions and whispers cautionary tales of twilight spirits.',
       frameType: 'purple-petal',
-      image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=85',
+      image: '/characters/srilata.png',
+      objectPosition: '44% center',
     },
   ];
 
   const renderFrame = (char: FrameCharacter) => {
     switch (char.frameType) {
       case 'green-rect':
-        return <GreenRectFrame image={char.image} name={char.name} />;
+        return <GreenRectFrame image={char.image} name={char.name} objectPosition={char.objectPosition} />;
       case 'cyan-stamp':
-        return <CyanStampFrame image={char.image} name={char.name} />;
+        return <CyanStampFrame image={char.image} name={char.name} objectPosition={char.objectPosition} />;
       case 'pink-oval':
-        return <PinkOvalFrame image={char.image} name={char.name} />;
+        return <PinkOvalFrame image={char.image} name={char.name} objectPosition={char.objectPosition} />;
       case 'blue-mat':
-        return <BlueMatFrame image={char.image} name={char.name} />;
+        return <BlueMatFrame image={char.image} name={char.name} objectPosition={char.objectPosition} />;
       case 'orange-rect':
-        return <OrangeRectFrame image={char.image} name={char.name} />;
+        return <OrangeRectFrame image={char.image} name={char.name} objectPosition={char.objectPosition} />;
       case 'purple-petal':
-        return <PurplePetalOvalFrame image={char.image} name={char.name} />;
+        return <PurplePetalOvalFrame image={char.image} name={char.name} objectPosition={char.objectPosition} />;
       default:
         return null;
     }
@@ -159,15 +145,15 @@ export const CharacterRoster: React.FC = () => {
                   className={`${styles.hoverPopoverCard} ${isHovered ? styles.popoverVisible : ''}`}
                 >
                   <h3 className={styles.popoverName}>
-                    {isBn ? char.nameBn : char.name}
+                    {char.name}
                   </h3>
                   
                   <span className={styles.popoverRole}>
-                    {isBn ? char.roleBn : char.role}
+                    {char.role}
                   </span>
 
                   <p className={styles.popoverBio}>
-                    {isBn ? char.bioBn : char.bio}
+                    {char.bio}
                   </p>
                 </div>
               </div>

@@ -70,16 +70,18 @@
   height: 100%;
   overflow: hidden;
   border-radius: 6px;
-  background: #0D1B2A;
+  background: #FFFFFF;
 }
 
 .frameImg {
   object-fit: cover;
-  transition: transform 0.4s ease;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.12));
 }
 
 .frameItem:hover .frameImg {
   transform: scale(1.05);
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.2));
 }
 
 /* ----------------------------------------------------
@@ -175,7 +177,7 @@
   height: 100%;
   border-radius: 50%;
   overflow: hidden;
-  background: #0D1B2A;
+  background: radial-gradient(circle at 50% 35%, #FFFFFF 20%, #FFF0F5 100%);
 }
 
 /* ----------------------------------------------------
@@ -274,7 +276,7 @@
   height: 100%;
   border-radius: 50%;
   overflow: hidden;
-  background: #0D1B2A;
+  background: radial-gradient(circle at 50% 35%, #FFFFFF 20%, #F7EEFD 100%);
 }
 
 /* ----------------------------------------------------
@@ -315,6 +317,7 @@
   color: #0099B8;
   line-height: 1.1;
   margin-bottom: 0.25rem;
+  text-transform: capitalize;
 }
 
 .popoverRole {
