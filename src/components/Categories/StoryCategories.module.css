@@ -17,10 +17,101 @@
   letter-spacing: -0.03em;
 }
 
+/* Language Selector */
+.langSelectorRow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  margin-top: 1.75rem;
+}
+
+.langSwitchPill {
+  display: inline-flex;
+  align-items: center;
+  background: #FFFFFF;
+  padding: 5px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+  border: 2px solid rgba(27, 122, 66, 0.14);
+  gap: 6px;
+}
+
+.langTab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.65rem 1.65rem;
+  border-radius: var(--radius-pill);
+  border: none;
+  background: transparent;
+  color: #1B7A42;
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  user-select: none;
+}
+
+.langTab:hover:not(.langTabActive) {
+  background: rgba(27, 122, 66, 0.08);
+  transform: translateY(-1px);
+}
+
+.langTabActive {
+  background: #1B7A42;
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(27, 122, 66, 0.32);
+}
+
+.langTabTitle {
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+
+.langTabBadge {
+  font-size: 0.74rem;
+  font-weight: 800;
+  padding: 0.15rem 0.55rem;
+  border-radius: var(--radius-pill);
+  transition: all 0.25s ease;
+}
+
+.langTabActive .langTabBadge {
+  background: rgba(255, 255, 255, 0.24);
+  color: #FFFFFF;
+}
+
+.langTab:not(.langTabActive) .langTabBadge {
+  background: rgba(27, 122, 66, 0.12);
+  color: #1B7A42;
+}
+
+.channelMetaHint {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #4A5568;
+  letter-spacing: 0.01em;
+}
+
+.ytRedIcon {
+  color: #E50914;
+}
+
 .cardsGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2.25rem;
+  transition: opacity 0.25s ease;
+}
+
+.cardsLoading {
+  opacity: 0.75;
 }
 
 .storyCard {
@@ -160,7 +251,20 @@
 }
 
 @media (max-width: 640px) {
+  .discoverSection {
+    padding: 3.5rem 0 4.5rem 0;
+  }
+  .headerArea {
+    margin-bottom: 2.5rem;
+  }
   .cardsGrid {
     grid-template-columns: 1fr;
+  }
+  .langTab {
+    padding: 0.5rem 1.15rem;
+    font-size: 0.9rem;
+  }
+  .channelMetaHint {
+    font-size: 0.8rem;
   }
 }

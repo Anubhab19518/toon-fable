@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { FALLBACK_VIDEOS } from '@/data/fallbackData';
+import { FALLBACK_VIDEOS, FALLBACK_SHORTS_BN, FALLBACK_SHORTS_EN } from '@/data/fallbackData';
 import { VideoStory } from '@/types';
 
 export const revalidate = 900; // Cache for 15 minutes to stay fresh with new uploads
@@ -15,23 +15,46 @@ function extractAttr(xml: string, tag: string, attr: string): string {
   return match ? match[1] : '';
 }
 
+const ENGLISH_CHANNEL_ID = 'UC0Buzc7xF_kqIDey7StWZEw';
+const BENGALI_CHANNEL_ID = 'UCKrkBlU3cBn0CaSlH7WGIyw';
+
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const maxResults = parseInt(searchParams.get('maxResults') || '6', 10);
   const order = searchParams.get('order') || 'date'; // 'date' for newest, 'viewCount' for top viewed
-  const channelId = process.env.YOUTUBE_CHANNEL_ID || 'UCKrkBlU3cBn0CaSlH7WGIyw';
+  const channelId = searchParams.get('channelId') || process.env.YOUTUBE_CHANNEL_ID || BENGALI_CHANNEL_ID;
+  const isShortsOnly = searchParams.get('shorts') === 'true' || searchParams.get('type') === 'shorts';
   const apiKey = process.env.YOUTUBE_API_KEY;
+
+  const isEnglishChannel = channelId === ENGLISH_CHANNEL_ID;
 
   // 1. Try YouTube Data API if API Key is available
   if (apiKey) {
     try {
       const orderParam = order === 'viewCount' ? 'viewCount' : 'date';
-      const url = `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=${orderParam}&maxResults=${maxResults}&type=video`;
+      let url = `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=${orderParam}&maxResults=${Math.max(maxResults, 12)}&type=video`;
+      if (isShortsOnly) {
+        url += '&videoDuration=short';
+      }
       const res = await fetch(url, { next: { revalidate: 900 } });
       if (res.ok) {
         const data = await res.json();
         if (data.items && data.items.length > 0) {
-          const videos: VideoStory[] = data.items.map((item: any, idx: number) => {
+          let items = data.items;
+
+          if (isShortsOnly) {
+            // Prioritize items containing #short, #shorts, etc.
+            const isShortTag = (t: string, d: string) => /#(short|shorts|shortsvideo|shortsfeed)\b/i.test(t + ' ' + d);
+            items = [...items].sort((a: any, b: any) => {
+              const aIs = isShortTag(a.snippet?.title || '', a.snippet?.description || '');
+              const bIs = isShortTag(b.snippet?.title || '', b.snippet?.description || '');
+              if (aIs && !bIs) return -1;
+              if (!aIs && bIs) return 1;
+              return 0;
+            });
+          }
+
+          const videos: VideoStory[] = items.slice(0, maxResults).map((item: any, idx: number) => {
             const title = item.snippet.title || 'Untitled Story';
             const description = item.snippet.description || '';
             const vidId = item.id.videoId;
@@ -41,19 +64,22 @@ export async function GET(request: Request) {
               title: title,
               titleBn: title,
               category: 'horror',
-              categoryLabel: { en: order === 'viewCount' ? 'Top Viewed' : 'Latest Tale', bn: order === 'viewCount' ? 'সর্বাধিক জনপ্রিয়' : 'নতুন পর্ব' },
+              categoryLabel: {
+                en: isShortsOnly ? (idx === 0 ? 'Latest Short' : idx === 1 ? 'Official Selection' : 'Popular Short') : (order === 'viewCount' ? 'Top Viewed' : 'Latest Tale'),
+                bn: isShortsOnly ? (idx === 0 ? 'নতুন শর্টস' : idx === 1 ? 'জনপ্রিয় শর্টস' : 'চলমান শর্টস') : (order === 'viewCount' ? 'সর্বাধিক জনপ্রিয়' : 'নতুন পর্ব')
+              },
               description: description.slice(0, 180) + (description.length > 180 ? '...' : ''),
               descriptionBn: description.slice(0, 180) + (description.length > 180 ? '...' : ''),
-              thumbnail: item.snippet.thumbnails?.high?.url || `https://i.ytimg.com/vi/${vidId}/hqdefault.jpg`,
+              thumbnail: item.snippet.thumbnails?.high?.url || item.snippet.thumbnails?.medium?.url || `https://i.ytimg.com/vi/${vidId}/hqdefault.jpg`,
               publishedAt: item.snippet.publishedAt?.split('T')[0] || 'Recent',
-              views: order === 'viewCount' ? 'Top Viewed' : 'Toon Fable Original',
+              views: isShortsOnly ? 'Toon Fable Shorts' : (order === 'viewCount' ? 'Top Viewed' : 'Toon Fable Original'),
               featured: idx === 0,
             };
           });
 
           return NextResponse.json({
             source: 'youtube-api',
-            items: videos.slice(0, maxResults),
+            items: videos,
             total: videos.length,
           });
         }
@@ -91,22 +117,33 @@ export async function GET(request: Request) {
           return {
             id: videoId || `live-${idx}`,
             youtubeId: videoId,
-            title: title || 'Toon Fable Bangla Episode',
-            titleBn: title || 'টুন ফেবল বাংলা গল্প',
+            title: title || 'Toon Fable Episode',
+            titleBn: title || 'টুন ফেবল গল্প',
             category: 'horror',
-            categoryLabel: { en: order === 'viewCount' ? 'Top Viewed' : 'Latest Release', bn: order === 'viewCount' ? 'সর্বাধিক জনপ্রিয়' : 'নতুন পর্ব' },
+            categoryLabel: {
+              en: isShortsOnly ? (idx === 0 ? 'Latest Short' : idx === 1 ? 'Official Selection' : 'Popular Short') : (order === 'viewCount' ? 'Top Viewed' : 'Latest Release'),
+              bn: isShortsOnly ? (idx === 0 ? 'নতুন শর্টস' : idx === 1 ? 'জনপ্রিয় শর্টস' : 'চলমান শর্টস') : (order === 'viewCount' ? 'সর্বাধিক জনপ্রিয়' : 'নতুন পর্ব')
+            },
             description: description.slice(0, 180) + (description.length > 180 ? '...' : ''),
             descriptionBn: description.slice(0, 180) + (description.length > 180 ? '...' : ''),
             thumbnail: thumbnail,
             publishedAt: published,
-            views: viewsAttr ? `${parseInt(viewsAttr).toLocaleString()} views` : 'Toon Fable Original',
+            views: isShortsOnly ? 'Toon Fable Shorts' : (viewsAttr ? `${parseInt(viewsAttr).toLocaleString()} views` : 'Toon Fable Original'),
             featured: idx === 0,
             _rawViews: viewCount
           };
         });
 
-        // If order === 'viewCount', sort by views descending
-        if (order === 'viewCount') {
+        if (isShortsOnly) {
+          const isShortTag = (t: string, d: string) => /#(short|shorts|shortsvideo|shortsfeed)\b/i.test(t + ' ' + d);
+          liveVideos = [...liveVideos].sort((a: any, b: any) => {
+            const aIs = isShortTag(a.title || '', a.description || '');
+            const bIs = isShortTag(b.title || '', b.description || '');
+            if (aIs && !bIs) return -1;
+            if (!aIs && bIs) return 1;
+            return 0;
+          });
+        } else if (order === 'viewCount') {
           liveVideos.sort((a: any, b: any) => (b._rawViews || 0) - (a._rawViews || 0));
         }
 
@@ -122,8 +159,11 @@ export async function GET(request: Request) {
   }
 
   // 3. Guaranteed Fallback
-  const fallbackList = [...FALLBACK_VIDEOS];
-  if (order === 'viewCount') {
+  let fallbackList = isShortsOnly
+    ? (isEnglishChannel ? FALLBACK_SHORTS_EN : FALLBACK_SHORTS_BN)
+    : [...FALLBACK_VIDEOS];
+
+  if (!isShortsOnly && order === 'viewCount') {
     fallbackList.sort((a, b) => (parseInt((b.views || '').replace(/[^0-9]/g, '') || '0') - parseInt((a.views || '').replace(/[^0-9]/g, '') || '0')));
   }
 

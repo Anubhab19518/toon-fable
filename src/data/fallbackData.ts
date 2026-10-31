@@ -81,6 +81,92 @@ export const STORY_WORLDS: StoryWorld[] = [
   }
 ];
 
+export const FALLBACK_SHORTS_BN: VideoStory[] = [
+  {
+    id: 'lpuMCt6vp0E',
+    youtubeId: 'lpuMCt6vp0E',
+    title: 'পাড়ার বন্ধু দের kali puja #kalipuja2026 #shorts',
+    titleBn: 'পাড়ার বন্ধু দের kali puja #kalipuja2026 #shorts',
+    category: 'horror',
+    categoryLabel: { en: 'Latest Shorts', bn: 'নতুন শর্টস' },
+    description: 'Kali Puja celebration with friends #shorts',
+    descriptionBn: 'পাড়ার বন্ধুদের সাথে কালী পুজো #shorts',
+    thumbnail: 'https://i.ytimg.com/vi/lpuMCt6vp0E/hqdefault.jpg',
+    publishedAt: '2026-10-28',
+    views: 'Toon Fable Shorts',
+    featured: true
+  },
+  {
+    id: 'X4lMEtOaxvc',
+    youtubeId: 'X4lMEtOaxvc',
+    title: 'সন্দেশ with সিংহ 😋 | #bijoyadashami',
+    titleBn: 'সন্দেশ with সিংহ 😋 | #bijoyadashami',
+    category: 'horror',
+    categoryLabel: { en: 'Official Selection', bn: 'জনপ্রিয় শর্টস' },
+    description: 'Bijoya Dashami special short animation',
+    descriptionBn: 'বিজয়া দশমী স্পেশাল শর্ট অ্যানিমেশন',
+    thumbnail: 'https://i.ytimg.com/vi/X4lMEtOaxvc/hqdefault.jpg',
+    publishedAt: '2026-10-15',
+    views: 'Toon Fable Shorts'
+  },
+  {
+    id: 'Dy2rx4PVhhs',
+    youtubeId: 'Dy2rx4PVhhs',
+    title: 'শুভ বিজয়া #shorts #দূর্গাপূজা',
+    titleBn: 'শুভ বিজয়া #shorts #দূর্গাপূজা',
+    category: 'horror',
+    categoryLabel: { en: 'Now Playing', bn: 'চলমান শর্টস' },
+    description: 'Shubho Bijoya greetings and short animation',
+    descriptionBn: 'শুভ বিজয়ার শুভেচ্ছা ও শর্ট অ্যানিমেশন',
+    thumbnail: 'https://i.ytimg.com/vi/Dy2rx4PVhhs/hqdefault.jpg',
+    publishedAt: '2026-10-14',
+    views: 'Toon Fable Shorts'
+  }
+];
+
+export const FALLBACK_SHORTS_EN: VideoStory[] = [
+  {
+    id: '3uZvY6u5-hM',
+    youtubeId: '3uZvY6u5-hM',
+    title: 'Jingle Bell Song । Christmas Status। Merry Christmas #shortsfeed',
+    titleBn: 'Jingle Bell Song । Christmas Status। Merry Christmas #shortsfeed',
+    category: 'adventure',
+    categoryLabel: { en: 'Latest Shorts', bn: 'নতুন শর্টস' },
+    description: 'Jingle Bell Song animated status #shortsfeed',
+    descriptionBn: 'জিংগল বেল গান অ্যানিমেটেড শর্টস',
+    thumbnail: 'https://i.ytimg.com/vi/3uZvY6u5-hM/hqdefault.jpg',
+    publishedAt: '2025-12-24',
+    views: 'Toon Fable Shorts',
+    featured: true
+  },
+  {
+    id: 'DLvB-JD_BmU',
+    youtubeId: 'DLvB-JD_BmU',
+    title: 'Twinkle twinkle little star ⭐ । Rhymes for kids - #shortsvideo #shorts',
+    titleBn: 'Twinkle twinkle little star ⭐ । Rhymes for kids - #shortsvideo #shorts',
+    category: 'adventure',
+    categoryLabel: { en: 'Official Selection', bn: 'জনপ্রিয় শর্টস' },
+    description: 'Twinkle Twinkle Little Star animated rhyme for kids #shorts',
+    descriptionBn: 'টুইঙ্কল টুইঙ্কল লিটল স্টার ছড়ার অ্যানিমেশন #shorts',
+    thumbnail: 'https://i.ytimg.com/vi/DLvB-JD_BmU/hqdefault.jpg',
+    publishedAt: '2025-12-20',
+    views: 'Toon Fable Shorts'
+  },
+  {
+    id: 'fqAJ6Of4S9Q',
+    youtubeId: 'fqAJ6Of4S9Q',
+    title: 'New version of the Milk maid and her pail english story। Toon fable',
+    titleBn: 'New version of the Milk maid and her pail english story। Toon fable',
+    category: 'moral',
+    categoryLabel: { en: 'Now Playing', bn: 'চলমান শর্টস' },
+    description: 'The Milkmaid and Her Pail animated English fable',
+    descriptionBn: 'মিল্কমেইড অ্যান্ড হার পেল ইংরেজি গল্পের রূপক',
+    thumbnail: 'https://i.ytimg.com/vi/fqAJ6Of4S9Q/hqdefault.jpg',
+    publishedAt: '2025-12-15',
+    views: 'Toon Fable Shorts'
+  }
+];
+
 export const FALLBACK_VIDEOS: VideoStory[] = [
   {
     id: 'tf-01',
